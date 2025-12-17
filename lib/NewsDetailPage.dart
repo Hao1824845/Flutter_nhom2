@@ -30,7 +30,6 @@ class NewsDetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Ảnh thumbnail
             if (article.urlToImage != null && article.urlToImage!.isNotEmpty)
               Hero(
                 tag: 'image_${article.url}',
@@ -56,13 +55,11 @@ class NewsDetailPage extends StatelessWidget {
                 color: Colors.grey[300],
                 child: const Icon(Icons.article, size: 80),
               ),
-
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Tiêu đề
                   Text(
                     article.title,
                     style: const TextStyle(
@@ -72,8 +69,6 @@ class NewsDetailPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-
-                  // Tác giả và ngày
                   Row(
                     children: [
                       const Icon(Icons.person, size: 16, color: Colors.grey),
@@ -131,8 +126,6 @@ class NewsDetailPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
                   ],
-
-                  // Nút mở link bài viết gốc
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton.icon(

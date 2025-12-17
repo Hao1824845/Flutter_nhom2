@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'APInewspage.dart';
 import 'NewsDetailPage.dart';
 
-// Màn hình danh sách tin tức
 class MyNewsPage extends StatefulWidget {
   const MyNewsPage({super.key});
 
@@ -63,7 +62,8 @@ class _MyNewsPageState extends State<MyNewsPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(Icons.error_outline, size: 64, color: Colors.red),
+                      const Icon(Icons.error_outline,
+                          size: 64, color: Colors.red),
                       const SizedBox(height: 16),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -116,10 +116,10 @@ class _MyNewsPageState extends State<MyNewsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Thumbnail
             if (article.urlToImage != null && article.urlToImage!.isNotEmpty)
               ClipRRect(
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(12)),
                 child: Hero(
                   tag: 'image_${article.url}',
                   child: Image.network(
@@ -144,11 +144,11 @@ class _MyNewsPageState extends State<MyNewsPage> {
                 height: 200,
                 decoration: BoxDecoration(
                   color: Colors.grey[300],
-                  borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(12)),
                 ),
                 child: const Icon(Icons.article, size: 60),
               ),
-
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Column(
@@ -167,8 +167,8 @@ class _MyNewsPageState extends State<MyNewsPage> {
                   ),
                   const SizedBox(height: 8),
 
-                  // Mô tả ngắn
-                  if (article.description != null && article.description!.isNotEmpty)
+                  if (article.description != null &&
+                      article.description!.isNotEmpty)
                     Text(
                       article.description!,
                       style: TextStyle(
@@ -181,7 +181,6 @@ class _MyNewsPageState extends State<MyNewsPage> {
                     ),
                   const SizedBox(height: 12),
 
-                  // Thông tin tác giả và ngày
                   Row(
                     children: [
                       Icon(Icons.person, size: 14, color: Colors.grey[600]),
@@ -198,7 +197,8 @@ class _MyNewsPageState extends State<MyNewsPage> {
                         ),
                       ),
                       const SizedBox(width: 8),
-                      Icon(Icons.access_time, size: 14, color: Colors.grey[600]),
+                      Icon(Icons.access_time,
+                          size: 14, color: Colors.grey[600]),
                       const SizedBox(width: 4),
                       Text(
                         article.getFormattedDate(),

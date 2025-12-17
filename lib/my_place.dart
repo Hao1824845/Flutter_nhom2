@@ -12,18 +12,16 @@ class MyPlace extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // ===== APPBAR có nút quay lại =====
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.black),
             onPressed: () {
-              Navigator.pop(context); // quay lại menu
+              Navigator.pop(context);
             },
           ),
         ),
-
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -38,7 +36,6 @@ class MyPlace extends StatelessWidget {
   }
 }
 
-// ====== BLOCK 1: HÌNH ẢNH ======
 Widget block1() {
   var src = "https://img.lovepik.com/photo/40251/4523.jpg_wh860.jpg";
   return Image.network(
@@ -49,7 +46,6 @@ Widget block1() {
   );
 }
 
-// ====== BLOCK 2: TIÊU ĐỀ + ĐÁNH GIÁ ======
 Widget block2() {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
@@ -91,7 +87,6 @@ Widget block2() {
   );
 }
 
-// ====== BLOCK 3: CÁC NÚT CALL / ROUTE / SHARE ======
 Widget block3() {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -120,7 +115,6 @@ Column buildButtonColumn(IconData icon, String label) {
   );
 }
 
-// ====== BLOCK 4: NỘI DUNG MÔ TẢ ======
 Widget block4() {
   return const Padding(
     padding: EdgeInsets.all(20.0),

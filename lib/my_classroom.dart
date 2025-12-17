@@ -46,12 +46,17 @@ class MyClassroom extends StatelessWidget {
             52,
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-8Jzu1SGC8MkSVmsTceeErdHIAGfNKu4X4Q&s',
           ),
+          block1(
+            'Lập trình ứng dụng cho các thiết bị di động - Nhóm 3',
+            '2025-2026.1.TIN4403.003',
+            52,
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-8Jzu1SGC8MkSVmsTceeErdHIAGfNKu4X4Q&s',
+          ),
         ],
       ),
     );
   }
 
-  // 🔹 BLOCK 1: Thẻ lớp học với học viên ở dưới cùng
   Widget block1(String title, String code, int students, String imageUrl) {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
@@ -61,8 +66,8 @@ class MyClassroom extends StatelessWidget {
         image: DecorationImage(
           image: NetworkImage(imageUrl),
           fit: BoxFit.cover,
-          colorFilter:
-              ColorFilter.mode(Colors.black.withOpacity(0.35), BlendMode.darken),
+          colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.35), BlendMode.darken),
         ),
         boxShadow: [
           BoxShadow(
@@ -76,13 +81,11 @@ class MyClassroom extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Stack(
           children: [
-            // Dấu 3 chấm góc phải trên
             Positioned(top: 0, right: 0, child: block2()),
-
-            // Nội dung chính
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text(
+              children: [
+                Text(
                   title,
                   style: const TextStyle(
                       color: Colors.white,
@@ -96,7 +99,7 @@ class MyClassroom extends StatelessWidget {
                   code,
                   style: const TextStyle(color: Colors.white70, fontSize: 13),
                 ),
-                const Spacer(), // 🔽 đẩy dòng học viên xuống dưới cùng
+                const Spacer(),
                 Text(
                   '$students học viên',
                   style: const TextStyle(color: Colors.white, fontSize: 13),
@@ -109,7 +112,6 @@ class MyClassroom extends StatelessWidget {
     );
   }
 
-  // 🔹 BLOCK 2: Dấu ba chấm góc phải trên
   Widget block2() {
     return PopupMenuButton<String>(
       icon: const Icon(Icons.more_vert, color: Colors.white),

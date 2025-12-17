@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter_nhom2/product.dart';
 
@@ -10,8 +12,9 @@ class Api {
     if (response.statusCode == 200) {
       // print(response.data);
       List data = response.data;
-      ls = data.map((json) => Product.fromJson(json)).toList();
-    } else {
+      ls = data.map((json)=>Product.fromJson(json)).toList();
+    }
+    else {
       print('Lỗi cái gì đó');
     }
     return ls;
